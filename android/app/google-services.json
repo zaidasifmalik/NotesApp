@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "834509585584",
+    "project_id": "notesapp-dccf2",
+    "storage_bucket": "notesapp-dccf2.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:834509585584:android:9c858e0cce77baebf50f75",
+        "android_client_info": {
+          "package_name": "com.zeamag.notesapp"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCJ3QC8cLzeqaXgJGJRjUNniR0z7pNZSpg"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
