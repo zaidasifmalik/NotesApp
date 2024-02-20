@@ -1,0 +1,61 @@
+class EightPuzzleDFS:
+    def __init__(self, initial_state, goal_state):
+        self.initial_state = initial_state
+        self.goal_state = goal_state
+        self.visited = set()
+        self.path = []
+
+    def dfs(self, current_state, depth):
+        # Check if the current state is the goal state
+        if current_state == self.goal_state:
+            return True
+
+        # Avoid revisiting states to prevent infinite loops
+        if current_state in self.visited:
+            return False
+
+        # Mark the current state as visited
+        self.visited.add(current_state)
+
+        # Perform DFS for each possible move
+        for next_state in self.generate_possible_moves(current_state):
+            if self.dfs(next_state, depth + 1):
+                self.path.append(next_state)
+                return True
+
+        return False
+
+    def generate_possible_moves(self, state):
+        # Implement the logic to generate possible moves from the current state
+        # This will depend on your specific representation of the puzzle and legal moves
+
+    def solve(self):
+        # Start DFS from the initial state
+        if self.dfs(self.initial_state, 0):
+            # Reverse the path to get the correct order
+            self.path = self.path[::-1]
+            return self.path
+        else:
+            return None
+
+
+# Example usage:
+initial_state = "120345678"
+goal_state = "012345678"
+
+solver = EightPuzzleDFS(initial_state, goal_state)
+solution_path = solver.solve()
+
+if solution_path:
+    print("DFS Algorithm")
+    print("-----------------")
+    print(f"Path Cost: {len(solution_path)}")
+    print(f"No of Node Visited: {len(solver.visited)}")
+    print("-----------------")
+
+    for state in solution_path:
+        # Print each state in the solution path
+        print_state(state)
+        print("-----")
+else:
+    print("No solution found.")
